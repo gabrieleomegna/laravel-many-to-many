@@ -9,9 +9,9 @@
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="{{$project->proj_image}}" alt="{{$project->title}} image cap">
                 <div class="card-body">
-                  <h5 class="card-title">{{$project->title}}</h5>
+                  <h3 class="card-title">{{$project->title}}</h3>
                   <p class="card-text">
-                    Type of project: {{isset($project->type_id) ? $project->type->type_name : 'Nessuno'  }} 
+                    <strong>Type of project: {{isset($project->type_id) ? $project->type->type_name : 'Nessuno'  }}</strong>
                     {{--@if ($project->type_id === 1) Back-end
                     @elseif ($project->type_id === 2) Front-end 
                     @elseif ($project->type_id === 3) Full-stack 
