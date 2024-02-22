@@ -23,6 +23,7 @@ return [ 'projects' =>
         [
             "title" => "proj-html-vuejs",
             "author" => "Gabriele Omegna",
+            "type_id" => 3,
             "image" => "https://picsum.photos/200/300",
             "description" => "In questo progetto ho utilizzato il framework Vue e Vite per implementare un'api di film su netflix",
             "start_date" => "2024/01/8",
