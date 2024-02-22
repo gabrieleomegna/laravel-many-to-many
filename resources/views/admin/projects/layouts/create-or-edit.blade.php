@@ -11,10 +11,7 @@
             <form action="@yield('form-action')" method="POST" enctype="multipart/form-data">
                 @csrf
                 @yield('form-method')
-                <div class="form-group mb-3">
-                  <label for="title">Project title</label>
-                  <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Enter email" value="{{old('title', $project->title)}}">
-                </div>
+                
                 <div class="form-group mb-3">
                   <label for="author">Author</label>
                   <input type="text" class="form-control" id="author" name="author" value="{{old('author', $project->author)}}">
@@ -44,6 +41,17 @@
                         </select>
                     </div>
                 @endif --}}
+
+                <div class="input-group mb-3">
+                    <div>
+                        @foreach ($technologies as $technology)
+                            <input class="form-check-input" type="checkbox" id="technologies-{{$technology->id}}" name="technologies[]" value="{{$technology->id}}">
+                            <label class="form-check-label" for="technologies-{{$technology->id}}">{{$technology->name}}</label>
+                        @endforeach
+                    </div>
+                </div>
+                <input type="text" name="Ciao" id="ciao">
+
                 <div class="form-group mb-3">
                     <label for="proj_image">URL image</label>
                     <input type="text" class="form-control" id="proj_image" name="proj_image" value="{{old('proj_image', $project->proj_image)}}">
