@@ -17,6 +17,11 @@
                     @elseif ($project->type_id === 3) Full-stack 
                     @endif--}}          
                   </p>
+                  @forelse ($project->technologies as $technology)
+                    <span class="badge text-bg-primary mb-3">{{$technology->name}}</span>
+                  @empty
+                    <span>There are no technologies...</span>
+                  @endforelse
                   <p class="card-text">{{$project->description}}</p>
                   <p class="card-text">This project was made in: {{$project->no_days_taken}} days</p>
                   <p class="card-text">Start date: {{$project->start_date}}</p>

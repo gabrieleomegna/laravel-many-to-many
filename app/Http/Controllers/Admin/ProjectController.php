@@ -21,9 +21,9 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Project $project)
-    {
-        return view('admin.projects.show', compact('project'));
+    public function show(Project $project){
+        $technologies = Technology::all();
+        return view('admin.projects.show', compact('project', 'technologies'));
     }
 
     /**
@@ -65,6 +65,7 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project){
         $data = $request->all();
         $project -> update($data);
+        $project->technologies()->sync($data['technologies']);
         return redirect()->route('admin.projects.show', $project);
     }
 
